@@ -34,6 +34,10 @@ export class Background {
     this.layer3image = document.getElementById("layer3");
     this.layer4image = document.getElementById("layer4");
     this.layer5image = document.getElementById("layer5");
+    this.layer6image = document.getElementById("layer6");
+    this.layer7image = document.getElementById("layer7");
+    this.layer8image = document.getElementById("layer8");
+    this.layer11image = document.getElementById("layer11");
 
     this.layer1 = new Layer(
       this.game,
