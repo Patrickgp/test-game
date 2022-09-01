@@ -7,7 +7,7 @@ import { UI } from "./UI.js";
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 1500;
+  canvas.width = 1000;
   canvas.height = 500;
 
   class Game {
@@ -97,7 +97,11 @@ window.addEventListener("load", function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
     game.draw(ctx);
-    if (!game.gameover) requestAnimationFrame(animate);
+    if (!game.gameover) {
+      requestAnimationFrame(animate);
+    } else {
+      cancelAnimationFrame(animate);
+    }
   }
 
   animate(0);

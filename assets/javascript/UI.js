@@ -6,9 +6,9 @@ export class UI {
   }
   draw(context) {
     context.save();
-    context.shadowOffsetX = 2;
-    context.shadowOffsetY = 2;
-    context.shadowColor = "white";
+    context.shadowOffsetX = 0.5;
+    context.shadowOffsetY = 0.5;
+    context.shadowColor = "red";
     context.shadowBlur = 0;
     context.font = this.fontSize + "px " + this.fontFamily;
     context.textAlign = "left";
@@ -22,7 +22,7 @@ export class UI {
     if (this.game.gameOver) {
       context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
-      if (this.game.score > 100) {
+      if (this.game.score > 50) {
         context.fillText(
           "Nice!",
           this.game.width * 0.5,

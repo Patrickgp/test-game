@@ -27,12 +27,3 @@
 #collisionAnimation {
   display: none;
 }
-
-h1 {
-  font-weight: 300;
-  font-size: 16pt;
-  width: 50%;
-  text-align: center;
-  top: 730px;
-  left: 500px;
-}
