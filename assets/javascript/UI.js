@@ -4,6 +4,7 @@ export class UI {
     this.fontSize = 30;
     this.fontFamily = "Helvetica";
     this.livesImage = document.getElementById("lives");
+    this.restartButton = document.getElementById("restart");
   }
   draw(context) {
     context.save();
@@ -25,7 +26,7 @@ export class UI {
     }
     // game over messages
     if (this.game.gameover) {
-      context.textAlign = "center";
+      context.context.textAlign = "center";
       context.font = this.fontSize * 2 + "px " + this.fontFamily;
       if (this.game.score > 50) {
         context.fillText(

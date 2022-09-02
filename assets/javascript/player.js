@@ -39,6 +39,12 @@ export class Player {
       new Hit(this.game),
     ];
   }
+  restart() {
+    this.x = 0;
+    this.y = this.game.height - this.height - this.game.groundMargin;
+    this.maxFrame;
+    this.frameY = 0;
+  }
   update(input, deltaTime) {
     this.checkCollision();
     this.currentState.handleInput(input);
