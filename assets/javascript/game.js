@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
     constructor(width, height) {
       this.width = width;
       this.height = height;
-      this.groundMargin = 80;
+      this.groundMargin = 57.5;
       this.speed = 0;
       this.maxSpeed = 1.5;
       this.background = new Background(this);
@@ -28,10 +28,11 @@ window.addEventListener("load", function () {
       this.enemyInterval = 1000;
       this.debug = false;
       this.score = 0;
-      this.fontColor = "black";
+      this.fontColor = "red";
       this.time = 0;
       this.maxTime = 200000;
       this.gameover = false;
+      this.lives = 5;
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();
     }
@@ -99,8 +100,6 @@ window.addEventListener("load", function () {
     game.draw(ctx);
     if (!game.gameover) {
       requestAnimationFrame(animate);
-    } else {
-      cancelAnimationFrame(animate);
     }
   }
 
