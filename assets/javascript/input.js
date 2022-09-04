@@ -45,15 +45,15 @@ export class InputHandler {
       ) {
         this.keys.push("swipe up");
         console.log("up");
+        if (this.game.gameover) {
+          window.location.reload();
+        }
       } else if (
         swipeDistanceY > this.touchTreshold &&
         this.keys.indexOf("swipe down") === -1
       ) {
         this.keys.push("swipe down");
         console.log("down");
-        if (this.game.gameover) {
-          window.location.reload();
-        }
       } else if (
         swipeDistanceX > this.touchTreshold &&
         this.keys.indexOf("swipe right") === -1

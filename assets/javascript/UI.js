@@ -30,13 +30,13 @@ export class UI {
       context.font = this.fontSize * 1 + "px " + this.fontFamily;
       if (this.game.score > 50) {
         context.fillText(
-          "Good Game! Press 'Escape' or 'Swipe Down' to play again!",
+          "Good Game! Press 'Escape' or 'Swipe Up' to play again!",
           this.game.width * 0.5,
           this.game.height * 0.95
         );
       } else {
         context.fillText(
-          "Fail!! Press 'Escape' or 'Swipe Down' to play again!",
+          "Fail!! Press 'Escape' or 'Swipe Up' to play again!",
           this.game.width * 0.5,
           this.game.height * 0.95
         );
