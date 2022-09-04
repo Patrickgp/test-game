@@ -129,9 +129,7 @@ export class Rolling extends State {
       (input.includes(" ") &&
         input.includes("ArrowUp") &&
         this.game.player.onGround()) ||
-      (input.includes("swipe down") &&
-        input.includes("swipe up") &&
-        this.game.player.onGround())
+      (input.includes("swipe up") && this.game.player.onGround())
     ) {
       this.game.player.vy -= 18;
     } else if (input.includes("ArrowDown")) {
