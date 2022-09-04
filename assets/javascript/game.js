@@ -108,15 +108,11 @@ window.addEventListener("load", function () {
     console.log(document.fullscreenElement);
     if (!document.fullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
-        console.log(err);
+        alert(`Error, can't enable full-screen mode: ${err.message}`);
       });
-    } else if (document.exitFullscreen) {
+    } else {
       document.exitFullscreen();
     }
-  }
-
-  if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
-    fullScreenButton.addEventListener("touchstart", toggleFullscreen);
   }
 
   fullScreenButton.addEventListener("click", toggleFullscreen);
