@@ -43,4 +43,7 @@ body {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
