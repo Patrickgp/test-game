@@ -12,11 +12,12 @@ window.addEventListener("load", function () {
   const fullScreenButton = document.getElementById("fullScreenButton");
 
   function toggleFullscreen() {
+    console.log(document.fullscreenElement);
     if (!document.fullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
         console.log(err);
       });
-    } else {
+    } else if (document.exitFullscreen) {
       document.exitFullscreen();
     }
   }
