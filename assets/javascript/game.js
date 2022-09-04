@@ -23,6 +23,12 @@ window.addEventListener("load", function () {
   }
 
   fullScreenButton.addEventListener("click", toggleFullscreen);
+
+  window.onload = function () {
+    if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+      document.body.addEventListener("touchstart", function () {}, false);
+    }
+  };
   class Game {
     constructor(width, height) {
       this.width = width;

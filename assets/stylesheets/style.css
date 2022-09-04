@@ -36,7 +36,8 @@ body {
   display: none;
 }
 
-#fullScreenButton {
+#fullScreenButton,
+#fullScreenButton:active {
   position: absolute;
   font-size: 16px;
   padding: 0 5px;
