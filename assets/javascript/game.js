@@ -12,8 +12,8 @@ window.addEventListener("load", function () {
   const fullScreenButton = document.getElementById("fullScreenButton");
 
   function toggleFullscreen() {
-    console.log(document.webkitFullscreenElement);
-    if (!document.webkitFullscreenElement) {
+    console.log(document.fullscreenElement);
+    if (!document.fullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
         console.log(err);
       });
