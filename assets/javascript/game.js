@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
 
   function toggleFullscreen() {
     console.log(document.webkitFullscreenElement);
-    if (!document.fullscreenElement) {
+    if (!document.webkitFullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
         console.log(err);
       });
