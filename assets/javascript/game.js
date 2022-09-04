@@ -11,25 +11,6 @@ window.addEventListener("load", function () {
   canvas.height = 500;
   const fullScreenButton = document.getElementById("fullScreenButton");
 
-  function toggleFullscreen() {
-    console.log(document.fullscreenElement);
-    if (!document.fullscreenElement) {
-      canvas.requestFullscreen().catch((err) => {
-        console.log(err);
-      });
-    } else if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-
-  window.onload = function () {
-    if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
-      document.body.addEventListener("touchstart", function () {}, false);
-    }
-  };
-
-  fullScreenButton.addEventListener("click", toggleFullscreen);
-
   class Game {
     constructor(width, height) {
       this.width = width;
@@ -122,6 +103,25 @@ window.addEventListener("load", function () {
       requestAnimationFrame(animate);
     }
   }
+
+  function toggleFullscreen() {
+    console.log(document.fullscreenElement);
+    if (!document.fullscreenElement) {
+      canvas.requestFullscreen().catch((err) => {
+        console.log(err);
+      });
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+
+  window.onload = function () {
+    if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+      document.body.addEventListener("touchstart", function () {}, false);
+    }
+  };
+
+  fullScreenButton.addEventListener("click", toggleFullscreen);
 
   animate(0);
 });
