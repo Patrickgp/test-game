@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
   const fullScreenButton = document.getElementById("fullScreenButton");
 
   function toggleFullscreen() {
-    console.log(document.fullscreenElement);
+    console.log(document.webkitFullscreenElement);
     if (!document.fullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
         console.log(err);
@@ -24,11 +24,6 @@ window.addEventListener("load", function () {
 
   fullScreenButton.addEventListener("click", toggleFullscreen);
 
-  window.onload = function () {
-    if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
-      document.body.addEventListener("touchstart", function () {}, false);
-    }
-  };
   class Game {
     constructor(width, height) {
       this.width = width;
