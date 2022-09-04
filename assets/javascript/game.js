@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
     }
   };
 
-  fullScreenButton.addEventListener("click", toggleFullscreen);
+  fullScreenButton.addEventListener("click touchstart", toggleFullscreen);
 
   class Game {
     constructor(width, height) {
