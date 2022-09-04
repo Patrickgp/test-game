@@ -115,11 +115,9 @@ window.addEventListener("load", function () {
     }
   }
 
-  window.onload = function () {
-    if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
-      document.body.addEventListener("touchstart", function () {}, false);
-    }
-  };
+  if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+    fullScreenButton.addEventListener("touchstart", toggleFullscreen);
+  }
 
   fullScreenButton.addEventListener("click", toggleFullscreen);
 
