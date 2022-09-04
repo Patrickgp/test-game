@@ -105,13 +105,18 @@ window.addEventListener("load", function () {
   }
 
   function toggleFullscreen() {
-    console.log(document.fullscreenElement);
-    if (!document.fullscreenElement) {
+    if (!document.webkitfullscreenElement) {
+      canvas.webkitRequestFullscreen().catch((err) => {
+        alert(`Error, can't enable full-screen mode: ${err.message}`);
+      });
+    } else if (!document.fullscreenElement) {
       canvas.requestFullscreen().catch((err) => {
         alert(`Error, can't enable full-screen mode: ${err.message}`);
       });
-    } else {
+    } else if (document.exitFullscreen) {
       document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
     }
   }
 
