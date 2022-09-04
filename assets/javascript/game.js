@@ -105,37 +105,13 @@ window.addEventListener("load", function () {
   }
 
   function toggleFullscreen() {
-    var doc = window.document;
-    var docEl = doc.documentElement;
-
-    var requestFullScreen =
-      docEl.requestFullscreen ||
-      docEl.mozRequestFullScreen ||
-      docEl.webkitRequestFullScreen ||
-      docEl.msRequestFullscreen;
-    var cancelFullScreen =
-      doc.exitFullscreen ||
-      doc.mozCancelFullScreen ||
-      doc.webkitExitFullscreen ||
-      doc.msExitFullscreen;
-
-    if (
-      !doc.fullscreenElement &&
-      !doc.mozFullScreenElement &&
-      !doc.webkitFullscreenElement &&
-      !doc.msFullscreenElement
-    ) {
-      requestFullScreen.call(docEl);
-    } else {
-      cancelFullScreen.call(doc);
+    if (!document.fullscreenElement) {
+      canvas.requestFullscreen().catch((err) => {
+        alert(`Error, can't enable full-screen mode: ${err.message}`);
+      });
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
     }
-  }
-  if (!document.fullscreenElement) {
-    canvas.requestFullscreen().catch((err) => {
-      alert(`Error, can't enable full-screen mode: ${err.message}`);
-    });
-  } else if (document.exitFullscreen) {
-    document.exitFullscreen();
   }
 
   fullScreenButton.addEventListener("click", toggleFullscreen);
